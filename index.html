@@ -21,6 +21,18 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <!-- Core theme CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Clean up UTM tracking parameters-->
+  <script>
+    window.addEventListener('load', function () {
+      const url = new URL(window.location);
+      if (url.search.includes('utm_')) {
+        // Clean the URL without reloading the page
+        window.history.replaceState({}, document.title, url.pathname);
+      }
+    });
+  </script>
+
 </head>
 
 <body>
